@@ -15,7 +15,8 @@
     "express": "^5.0.0",
     "http-errors": "~2.0.0",
     "jade": "~1.11.0",
-    "morgan": "~1.10.0"
+    "morgan": "~1.10.0",
+    "mysql": "^2.18.1"
   },
   "devDependencies": {
     "@types/express": "^5.0.0",
