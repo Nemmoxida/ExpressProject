@@ -6,5 +6,5 @@ import authenticateJWT from "../Token/authenticateJWT.js";
  */
 export default function routes(app, express, jwt) {
   app.use("/login", Login(express, jwt));
-  app.use("/", authenticateJWT(), Home(express, jwt));
+  app.use("/", authenticateJWT(jwt), Home(express, jwt));
 }

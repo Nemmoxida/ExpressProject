@@ -1,12 +1,11 @@
 import verifyToken from "./verifyToken.js";
-import jwt from "jsonwebtoken";
 
 /**
  * @param {Express.Request} req
  * @param {Express.Response} res
  */
 
-export default function authenticateJWT() {
+export default function authenticateJWT(jwt) {
   return (req, res, next) => {
     const authHeader = req.headers["authorization"];
     if (!authHeader) {
