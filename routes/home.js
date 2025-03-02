@@ -1,9 +1,13 @@
-import getController from "../Controllers/getController.js";
+import getHome from "../Controllers/getHome.js";
+
 /**
  * @param {ExpressApp} express
  */
-export default function Home(express) {
-  const controller = getController();
+export default function Home(express, jwt) {
+  const router = express.Router();
+  const home = getHome();
 
-  return controller;
+  router.get("/", home);
+
+  return router;
 }

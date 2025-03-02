@@ -1,4 +1,4 @@
-export default function getController() {
+export default function getHome() {
   /**
    * @param {Express.Request} req
    * @param {Express.Response} res
@@ -6,7 +6,7 @@ export default function getController() {
    */
 
   const getData = (req, res) => {
-    res.send("Hello World");
+    res.send(`Welcome to the home page ${req.user.id}`);
   };
   return getData;
 }

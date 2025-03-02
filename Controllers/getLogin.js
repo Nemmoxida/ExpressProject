@@ -1,4 +1,6 @@
-export default function getLogin() {
+import generateToken from "../Token/generateToken.js";
+
+export default function getLogin(jwt) {
   /**
    * @typedef {import('express').Request} Request
    * @typedef {import('express').Response} Response
@@ -7,16 +9,17 @@ export default function getLogin() {
   /**
    * @param {Request} req
    * @param {Response} res
+   * @param {jwt} jwt
    */
+
   const getLogin = (req, res) => {
-    // const username = req.query.username; // Use req.query to get query parameters
-
-    // if (!username) {
-    //   return res.status(400).send("Username is required");
-    // }
-
-    // res.status(200).send(`Hello ${username}`);
-    res.status(200).send(req.body);
+    const { username, password } = req.body;
+    if (!username || !password) {
+      res.status(400).json({ message: "Invalid username or password" });
+      return;
+    }
+    const token = generateToken(jwt, username, password);
+    res.status(200).json({ token });
   };
 
   return getLogin;
