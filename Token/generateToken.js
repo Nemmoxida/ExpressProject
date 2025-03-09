@@ -8,7 +8,7 @@ export default function generateToken(jwt, username, password) {
       id: username,
       password: password,
     },
-    process.env.JWT_SECRET,
+    process.env.SECRET_KEY,
     { expiresIn: "1hr" }
   );
   return token;

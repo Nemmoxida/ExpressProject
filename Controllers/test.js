@@ -6,6 +6,4 @@
  * @param {Express.Response} res - Objek response dari Express.js
  * @returns {void}
  */
-function olahDataPengguna(req, res) {
-  // kode di sini
-}
+function olahDataPengguna(req, res) {}

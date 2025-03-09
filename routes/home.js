@@ -3,7 +3,7 @@ import getHome from "../Controllers/getHome.js";
 /**
  * @param {ExpressApp} express
  */
-export default function Home(express, jwt) {
+export default function Home(express) {
   const router = express.Router();
   const home = getHome();
 
