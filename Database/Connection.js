@@ -1,19 +1,30 @@
-import mysql from "mysql2";
+import mysql from "mysql2/promise";
 import dotenv from "dotenv";
 
 dotenv.config({ path: "../.env" });
+dotenv.config();
 
-export const db = mysql.createConnection({
-  host: process.env.HOST,
-  user: process.env.USER,
-  password: process.env.PASSWORD1,
-  database: process.env.DATABASE,
-});
+const createConnection = () => {
+  return mysql.createPool({
+    host: process.env.HOST,
+    user: process.env.USER,
+    password: process.env.PASSWORD1,
+    database: process.env.DATABASE,
+    connectionLimit: 10,
+  });
+};
 
-db.connect((err) => {
-  if (err) {
+const pool = createConnection();
+
+// Test the connection
+pool
+  .getConnection()
+  .then((connection) => {
+    console.log("Connected to database");
+    connection.release(); // Release the connection back to the pool
+  })
+  .catch((err) => {
     console.log("Error connecting to database", err);
-    return;
-  }
-  console.log("Connected to database");
-});
+  });
+
+export default pool;
