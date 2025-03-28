@@ -19,7 +19,8 @@
     "morgan": "~1.10.0",
     "mysql": "^2.18.1",
     "mysql2": "^3.13.0",
-    "uuid": "^11.1.0"
+    "uuid": "^11.1.0",
+    "winston": "^3.17.0"
   },
   "devDependencies": {
     "@types/express": "^5.0.0",
