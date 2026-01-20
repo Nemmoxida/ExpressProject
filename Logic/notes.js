@@ -1,6 +1,5 @@
 class notes {
-  constructor(id, title, content, userId) {
-    this.id = id;
+  constructor(title, content, userId) {
     this.title = title;
     this.content = content;
     this.userId = userId;

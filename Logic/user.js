@@ -1,8 +1,8 @@
-class users {
+class Users {
   constructor(username, password) {
     this.username = username;
     this.password = password;
   }
 }
 
-export default users;
+export default Users;

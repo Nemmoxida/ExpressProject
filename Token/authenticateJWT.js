@@ -1,3 +1,4 @@
+import { AppError } from "../Middleware/customErrorObject.js";
 import verifyToken from "./verifyToken.js";
 
 /**
@@ -9,19 +10,19 @@ export default function authenticateJWT(jwt) {
   return (req, res, next) => {
     const authHeader = req.headers["authorization"];
     if (!authHeader) {
-      return res.status(401).json({ message: "Unauthorized need a token" });
+      return next(new AppError("Unauthorize no token detected", 401));
     }
 
-    const token = authHeader.split(" ")[1]; // Extract the token from the "Bearer <token>" format
+    // Extract the token from the "Bearer <token>" format
+    const token = authHeader.split(" ")[1];
     if (!token) {
-      return res.status(401).json({ message: "Unauthorized bearer" });
+      return next(new AppError("Unauthorize bearer", 401));
     }
 
+    // Handle verification, return null if token is invalid
     const decoded = verifyToken(jwt, token);
     if (!decoded) {
-      return res
-        .status(401)
-        .json({ message: "Unauthorized not allowed token" });
+      return next(new AppError("Unauthorize invalid token", 401));
     }
 
     req.user = decoded;

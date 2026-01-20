@@ -1,12 +1,13 @@
 import Home from "./home.js";
-import Login from "./login.js";
+import account from "./account.js";
 import authenticateJWT from "../Token/authenticateJWT.js";
 import Notes from "./notes.js";
-/**
- * @param {ExpressApp} app
- */
+import pokemon from "./pokemon.js";
+
 export default function routes(app, express, jwt, uuid, userRepo) {
-  app.use("/login", Login(express, jwt));
+  app.use("/pokemon", authenticateJWT(jwt), pokemon(express));
+
+  app.use("/account", account(express, jwt, userRepo));
   app.use("/notes", authenticateJWT(jwt), Notes(express, userRepo, uuid));
-  app.use("/", authenticateJWT(jwt), Home(express));
+  app.use("/", Home(express));
 }
