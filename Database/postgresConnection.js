@@ -12,6 +12,7 @@ const connection = new Pool({
   port: process.env.DB_PORT,
 });
 
+// test connection
 connection.connect((err) => {
   if (err) {
     return console.log(err);

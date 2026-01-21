@@ -11,11 +11,13 @@ export default function getLogin(jwt, userRepo) {
       return next(new AppError("No username or password detected", 400));
     }
 
+    // handle query to DB
     const getUsername = await userRepo.getUser(username);
     if (!getUsername) {
       return next(new AppError("No user exist", 400));
     }
 
+    // comparing hashed password with bcript
     const validate = bcrypt.compareSync(password, getUsername[0].password);
     if (validate == false) {
       return next(new AppError("Wrong password", 400));

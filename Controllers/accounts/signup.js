@@ -11,6 +11,7 @@ export default function signUp(userRepo) {
 
     const hashedPassword = bcrypt.hashSync(password, 8);
     try {
+      // handle query to DB
       const result = await userRepo.addUser(username, hashedPassword);
       const respond = respondHanlder(
         null,

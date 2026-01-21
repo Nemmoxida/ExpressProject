@@ -1,5 +1,6 @@
 import { v7 as uuidv7 } from "uuid";
 
+// for making respond object
 export default function respondHanlder(data, statusCode = 200, message) {
   const requestId = uuidv7();
   const requestTime = new Date().toISOString();

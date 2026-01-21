@@ -1,4 +1,6 @@
+// using uuid version 7 for making requestId
 import { v7 as uuidv7 } from "uuid";
+
 // error handler
 export default function errorHandler(err, req, res, next) {
   console.log(err);

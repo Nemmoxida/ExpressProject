@@ -6,7 +6,6 @@ import pokemon from "./pokemon.js";
 
 export default function routes(app, express, jwt, uuid, userRepo) {
   app.use("/pokemon", authenticateJWT(jwt), pokemon(express));
-
   app.use("/account", account(express, jwt, userRepo));
   app.use("/notes", authenticateJWT(jwt), Notes(express, userRepo, uuid));
   app.use("/", Home(express));

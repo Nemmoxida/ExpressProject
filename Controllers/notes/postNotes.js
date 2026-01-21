@@ -8,14 +8,14 @@ export default function postNotes(userRepo) {
       const { title, content } = req.body;
       const user = req.user.id;
 
+      // validation
       if (!user) {
         return next(new AppError("No user detected", 400));
-      }
-
-      if (!title || !content) {
+      } else if (!title || !content) {
         return next(new AppError("Note must have a title and content", 400));
       }
 
+      // handle query to DB
       try {
         const post = await handlePost(userRepo, title, content, user);
       } catch (error) {
