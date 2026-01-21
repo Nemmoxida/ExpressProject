@@ -9,6 +9,7 @@ export default function getAccount(userRepo) {
         return next(new AppError("No username detected", 400));
       }
 
+      // handle query to DB
       const data = await userRepo.getUser(username);
       const respond = respondHanlder(data, 200, "Data retrieved successfully");
       return res.status(200).json(respond);

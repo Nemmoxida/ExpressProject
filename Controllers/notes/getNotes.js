@@ -6,6 +6,7 @@ export default function getNotes(userRepo) {
     const keyword = req.query.keyword;
     const user = req.user.id;
 
+    // handle query to DB
     try {
       const notes = await handleGet(userRepo, keyword, user);
     } catch (error) {

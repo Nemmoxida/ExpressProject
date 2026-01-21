@@ -6,6 +6,7 @@ export default function deleteNotes(userRepo) {
     try {
       const noteId = req.query.id;
 
+      // handle query to DB
       try {
         const deleteNote = handleDelete(userRepo, noteId);
       } catch (error) {

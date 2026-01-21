@@ -10,6 +10,10 @@ import postgres from "./Database/postgresConnection.js";
 // import mysqlRepository from "./Repository/mysqlRepository.js";
 import pgRepository from "./Repository/pgRepository.js";
 import morgan from "morgan";
+import swaggerUi from "swagger-ui-express";
+
+import fs from "fs";
+const swaggerSpec = JSON.parse(fs.readFileSync("./swagger.json", "utf-8"));
 
 dotenv.config();
 const app = express();
@@ -19,6 +23,7 @@ const uuid = uuidv4();
 // const userRepo = new mysqlRepository(mysql);
 const userRepo = new pgRepository(postgres);
 
+app.use("/docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 // Middleware for logging requests
 app.use(morgan("dev"));
 

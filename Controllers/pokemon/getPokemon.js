@@ -1,5 +1,5 @@
 import { AppError } from "../../Middleware/customErrorObject.js";
-import respondHanlder from "../../Middleware/respondHandler";
+import respondHanlder from "../../Middleware/respondHandler.js";
 
 export default function getPokemon() {
   return async (req, res, next) => {
