@@ -220,6 +220,24 @@
         }
       }
     },
+    "/pokemon": {
+      "get": {
+        "tags": ["Pokemon"],
+        "summary": "Get Full Data of a Pokémon ",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "pokemon",
+            "schema": { "type": "string" },
+            "required": true,
+            "description": "Full Info of a Pokémon"
+          }
+        ],
+        "responses": {
+          "200": { "description": "Full Data of a Pokémon abilities" }
+        }
+      }
+    },
     "/pokemon/abilities": {
       "get": {
         "tags": ["Pokemon"],
