@@ -219,6 +219,186 @@
           }
         }
       }
+    },
+    "/pokemon/abilities": {
+      "get": {
+        "tags": ["Pokemon"],
+        "summary": "Get Pokémon abilities",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "ability",
+            "schema": { "type": "string" },
+            "required": true,
+            "description": "Ability of the Pokémon"
+          }
+        ],
+        "responses": {
+          "200": { "description": "List of Pokémon abilities" }
+        }
+      }
+    },
+    "/pokemon/types": {
+      "get": {
+        "tags": ["Pokemon"],
+        "summary": "Get Pokémon types",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "type",
+            "schema": { "type": "string" },
+            "required": true,
+            "description": "Type of the Pokémon"
+          }
+        ],
+        "responses": {
+          "200": { "description": "List of Pokémon types" }
+        }
+      }
+    },
+    "/pokemon/genders": {
+      "get": {
+        "tags": ["Pokemon"],
+        "summary": "Get Pokémon genders",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "gender",
+            "schema": { "type": "string" },
+            "required": true,
+            "description": "Gender of the Pokémon"
+          }
+        ],
+        "responses": {
+          "200": { "description": "List of Pokémon genders" }
+        }
+      }
+    },
+    "/pokemon/stats": {
+      "get": {
+        "tags": ["Pokemon"],
+        "summary": "Get Pokémon stats",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "stat",
+            "schema": { "type": "string" },
+            "required": true,
+            "description": "Stat of the Pokémon"
+          }
+        ],
+        "responses": {
+          "200": { "description": "List of Pokémon stats" }
+        }
+      }
+    },
+    "/pokemon/characteristics": {
+      "get": {
+        "tags": ["Pokemon"],
+        "summary": "Get Pokémon characteristics",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "characteristic",
+            "schema": { "type": "string" },
+            "required": true,
+            "description": "Characteristic of the Pokémon"
+          }
+        ],
+        "responses": {
+          "200": { "description": "List of Pokémon characteristics" }
+        }
+      }
+    },
+    "/pokemon/natures": {
+      "get": {
+        "tags": ["Pokemon"],
+        "summary": "Get Pokémon natures",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "nature",
+            "schema": { "type": "string" },
+            "required": true,
+            "description": "Nature of the Pokémon"
+          }
+        ],
+        "responses": {
+          "200": { "description": "List of Pokémon natures" }
+        }
+      }
+    },
+    "/pokemon/generations": {
+      "get": {
+        "tags": ["Pokemon"],
+        "summary": "Get Pokémon generations",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "generation",
+            "schema": { "type": "string" },
+            "required": true,
+            "description": "Generation of the Pokémon"
+          }
+        ],
+        "responses": {
+          "200": { "description": "List of Pokémon generations" }
+        }
+      }
+    },
+    "/pokemon/versions": {
+      "get": {
+        "tags": ["Pokemon"],
+        "summary": "Get Pokémon versions",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "version",
+            "schema": { "type": "string" },
+            "required": true,
+            "description": "Version of the Pokémon"
+          }
+        ],
+        "responses": {
+          "200": { "description": "List of Pokémon versions" }
+        }
+      }
+    },
+    "/pokemon/items": {
+      "get": {
+        "tags": ["Pokemon"],
+        "summary": "Get Pokémon items",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "item",
+            "schema": { "type": "string" },
+            "required": true,
+            "description": "Item of the Pokémon"
+          }
+        ],
+        "responses": {
+          "200": { "description": "List of Pokémon items" }
+        }
+      }
+    },
+    "/pokemon/locations": {
+      "get": {
+        "tags": ["Pokemon"],
+        "summary": "Get Pokémon locations",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "location",
+            "schema": { "type": "string" },
+            "required": true,
+            "description": "Location of the Pokémon"
+          }
+        ],
+        "responses": {
+          "200": { "description": "List of Pokémon locations" }
+        }
+      }
     }
   }
 }
