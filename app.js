@@ -6,9 +6,9 @@ import dotenv from "dotenv";
 import errorHandling from "./Middleware/errorHandling.js";
 import { v4 as uuidv4 } from "uuid";
 // import mysql from "./Database/mysqlConnection.js";
-import postgres from "./Database/postgresConnection.js";
+// import postgres from "./Database/postgresConnection.js";
 // import mysqlRepository from "./Repository/mysqlRepository.js";
-import pgRepository from "./Repository/pgRepository.js";
+// import pgRepository from "./Repository/pgRepository.js";
 import morgan from "morgan";
 import swaggerUi from "swagger-ui-express";
 
