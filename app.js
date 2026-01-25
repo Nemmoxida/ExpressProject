@@ -21,7 +21,8 @@ const uuid = uuidv4();
 
 // Change the database to you spesific use either mysql or postgres
 // const userRepo = new mysqlRepository(mysql);
-const userRepo = new pgRepository(postgres);
+// const userRepo = new pgRepository(postgres);
+const userRepo = "asd";
 
 app.use("/docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 // Middleware for logging requests

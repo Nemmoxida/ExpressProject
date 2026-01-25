@@ -8,7 +8,7 @@ export default function Login(express, jwt, userRepo) {
   const auth = getLogin(jwt, userRepo);
   const signup = signUp(userRepo);
 
-  router.post("/getAccout", getAccount(userRepo));
+  router.post("/getAccouts", getAccount(userRepo));
   router.get("/getAllAccouts", getAllAccounts(userRepo));
   router.post("/login", auth);
   router.post("/signup", signup);

@@ -53,7 +53,7 @@
         }
       }
     },
-    "/account/getAccout": {
+    "/account/getAccouts": {
       "post": {
         "tags": ["Account"],
         "summary": "Get account by username",
