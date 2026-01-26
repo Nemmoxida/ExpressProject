@@ -9,11 +9,10 @@ export default function getNotes(userRepo) {
     // handle query to DB
     try {
       const notes = await handleGet(userRepo, keyword, user);
+      const respond = respondHanlder(notes, 200, "Data recieved successfully");
+      return res.status(200).json(respond);
     } catch (error) {
       return next(error);
     }
-    const respond = respondHanlder(notes, 200, "Data recieved successfully");
-
-    return res.status(200).json(respond);
   };
 }
